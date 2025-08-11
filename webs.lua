@@ -1,6 +1,6 @@
 repeat task.wait() until game:IsLoaded()
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/Tech-187/BetterIY/refs/heads/main/BetterIYMain.lua"))() --if you’re attempting to comment this out then the pwn or (potato crash) might not work!! since im personally using it’s BetterIY orbit. lol i still remember the way tech said it was clever using orbit!!
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/Tech-187/BetterIY/refs/heads/main/BetterIYMain.lua'),true))()
 
 local players = game:GetService("Players")
 local TextChatService = game:GetService("TextChatService")
@@ -16,7 +16,7 @@ local playerGui = player:WaitForChild("PlayerGui")
 local screenGui = playerGui:FindFirstChild("KKKKKKKKKKKKKKK")
 local debris = game:GetService("Debris")
 
-roblox.FallenPartsDestroyHeight = 0/0 --yes i skidded this, kinda tough right!?!!!?1?1?1!1!
+roblox.FallenPartsDestroyHeight = 0/0 --yes i skidded this 9982929828th time skidding, kinda tough right!?!!!?1?1?1!1!
 
 local prefix = ";" --lol if you aswell load tech’s KAH Legacy Script then try to change this prefix or dont, the reason why im telling you to do it it’s because it’ll confuse you even though it’s not necessary to change it, i mean overall our commands are far away from being the exact same except the “clr” one because yeah lol
 
@@ -126,7 +126,7 @@ function GetPlayers(targets, me)
     return found
 end
 
-function moveObject(trog, dor) --yes i skidded it first time skidding though (overall it’s not a really good part mover but what can i say, credits to iiDk)
+function moveObject(trog, dor) --yes i skidded it first time skidding though (overall it’s not a really good part mover but what can i say)
     function equipivory()
         if plr.Backpack:FindFirstChild("IvoryPeriastron") then
             plr.Backpack.IvoryPeriastron.Parent = plr.Character
@@ -182,7 +182,7 @@ function moveObject(trog, dor) --yes i skidded it first time skidding though (ov
         spawn(function() 
             while looping do 
                 game:GetService('RunService').Heartbeat:wait() 
-                cht('unpunish me me me me me me me me me me me me me me me me me me me me me me me me me me me me me me me fuck') 
+                cht('unpunish me me me me me me me me me me me me me me me me me me') 
             end 
         end)
         
@@ -423,7 +423,8 @@ function addcmd(cmdTable)
     local aliases = cmdTable.aliases or cmdTable.Aliases
     local description = cmdTable.description or cmdTable.desc or "No description available."
 
-    if not name or not func the
+    if not name or not func then
+        warn("Command missing name or callback!")
         return
     end
 
@@ -472,24 +473,23 @@ end
 
 local Iocal_string = false
 
-local function tomboys(sender, msg)--this is ant-size
+local function tomboys(sender, msg)
     if sender == plr or Iocal_string then return end
 
     local cxouwu = msg:lower()
     local techuwu = plr.Name:lower()
-    local kozyuwu = {} --lol cxouwu, techuwu, kozyuwu i love how it's lined together
-    local dekryptioniteuwu = "he's in our heart." --aura..
 
-  
+
+    local kozyuwu = {}
     for word in cxouwu:gmatch("%S+") do
         kozyuwu[#kozyuwu + 1] = word
     end
 
     for i = 1, #kozyuwu - 2 do
-        if kozyuwu[i] == "size" and kozyuwu[i + 2] == "nan" then --at first checks everyone's Message (even detected with game.Players:Chat at very bottom) if their first command is "size" then we're waiting for thr 2nd argument which is player and if it's our username (or just like 1 or 2 user like id, ido) then we'll still ignore it but if the 3RD ARGUMENT which is specified to be a number or if it's "NAN" then it'll trigger something.
+        if kozyuwu[i] == "size" and kozyuwu[i + 2] == "nan" then
             local KohlsH_Angler = kozyuwu[i + 1]
             for len = 1, #techuwu do
-                if KohlsH_Angler == techuwu:sub(1, len) then --like that it's checking if the 2nd argument (which is trying to specify a username) then this woulf check every letters from our name and if it matches then yeah you know what will happen
+                if KohlsH_Angler == techuwu:sub(1, len) then
                     Iocal_string = true
                     task.spawn(coroutine.wrap(function()
                         task.wait(0.0000000000005) --not necessary
@@ -524,9 +524,9 @@ end
 
 addcmd({
     name = "cmds",
-    description = "ts",
+    description = "Show all available commands",
     callback = function(args, player)
-        print("=== Commands ===")
+        print("=== Available Commands ===")
         for name, cmdInfo in pairs(System.cmdInfo) do
             local aliasText
             if cmdInfo.aliases and #cmdInfo.aliases > 0 then
@@ -568,7 +568,7 @@ addcmd({
 
 --[[addcmd({ decided to comment this out because it’s so bad!!
     name = "fixregen",
-    description = "a",
+    description = "Moves Regen pad back to its original position.",
     callback = function(args, plr)
         local regen = workspace.Terrain._Game.Admin:FindFirstChild("Regen")
         if not regen then
@@ -666,10 +666,9 @@ addcmd({
     end
 })
 
--- lol dont even think try out this cmd, it's not even going to move it!!
 addcmd({
     name = "moveregen",
-    description = "bad",
+    description = "Moves Regen pad to a random far position and saves it.",
     callback = function(args, plr)
         local regen = workspace.Terrain._Game.Admin:FindFirstChild("Regen")
         if not regen then
@@ -687,7 +686,7 @@ addcmd({
 -- this is so stupid if i have time then im going to fix every commented ones
 --[[addcmd({
     name = "gotoregen",
-    description = "bad",
+    description = "Teleports you to the saved Regen position.",
     callback = function(args, plr)
         if not _G.regenpos or _G.regenpos == nil then
             notif("No saved position found. Use ;moveregen first!")
@@ -756,11 +755,9 @@ addcmd({
 
 addcmd({
    name = "breakperm",
-   description = "breaks perm gamepass (WORKS WITH NEW SERVERS (pretty much i assume) credits to tech!", --tbf i’d make one but the thing is not im just lazy nor taking much efforts on it, it annoys me because of testing it alot lately and honestly i dont like to annoy the servers or fixing errors and stuff (it just kills my time), while i was testing my version before i’d just be returned a huge lag spike so i stopped making it, im dissatisfied about how it doesn’t work aswell!!
+   description = "breaks perm gamepass (WORKS ONLY WITH NEW SERVERS (pretty much i assume)) credits to tech!", --tbf i’d make one but the thing is not im just lazy nor taking much efforts on it, it annoys me because of testing it alot lately and honestly i dont like to annoy the servers or fixing errors and stuff (it just kills my time), while i was testing my version before i’d just be returned a huge lag spike so i stopped making it, im dissatisfied about how it doesn’t work aswell!!
    callback = function(args, plr)
-
-   --alright so i forgot to mention 1 thing, technically breaking perm from the server (besides new server, or old server let's say) works but the reason why new server is way better and faster to disable it well it's because of the SERVER'S AGE which means if the server was up for like a hour or so then breaking perm would be in like 15 or 35 minutes but if the current server is existing for way longer like 2 hours or 4 hours then it'll take along time to make it work. i was in a server testing this out (an old server) and i had free time so at first i tried to break perm and yeah it spiked me aswell (which like techs) but i didn't thought it will lag spike you!! anyways i did it and uhh yeah it didn't seem to work at First. so i waited in the old server and for like about 17 minutes it disabled perm completely.
-
+   
    --chatt(prefix .. "unantipotato");wait() this soon will be uncommented cause im also making an anti-potato kick (if you think i already have one which is anti-size then yeah that is true but thats just 1 part of the method to kick people. you see im also making one that likely stops tools or what you call it (gears) Specifically Hot Potato) but not like techs!
 
     for i = 1, 100 do
@@ -785,7 +782,7 @@ addcmd({
 --[[addcmd({
     name = "hackerchat",
     aliases = {"hchat"},
-    description = "a",
+    description = "Open a private emoji chat UI with message encoding/decoding.",
     callback = function(plr, args)
         local emojis = {
             a = "😀", b = "😁", c = "😂", d = "🤣", e = "😃", f = "😄", g = "😅", h = "😆",
@@ -975,18 +972,18 @@ addcmd({
         humanoid:Destroy()
       end
       character:Destroy()
-      humanoid:Destroy() --LOL still processing to destroy it rahhhh!!!
+      humanoid:Destroy() --LOL still processing to destroy it!!
     end
   end
 })
 
 addcmd({
     name = "checkgp", --v
-    aliases = {"gp", "checkpass"},--i kinda love this command!!
+    aliases = {"gp", "checkpass"},
     description = "haha",
     callback = function(args, plr)
         if not args[1] then
-            notif("Usage: " .. prefix .. "checkgp <player>", "misusing")
+            notif("Usage: " .. prefix .. "checkgp <player>", "Error")
             return
         end
 
