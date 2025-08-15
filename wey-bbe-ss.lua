@@ -46,7 +46,7 @@ local antifreeze = true
 local antijail = true
 local antiskydive = true
 local antiblind = true
-local antiHatEnabled = false -- Fixed: defined the missing variable
+local antiHatEnabled = false --alright
 
 local HttpService = game:GetService("HttpService")
 local regenPath = "regen_position.json"
